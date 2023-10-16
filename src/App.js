@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import QuoteDisplay from './components/QuoteDisplay';
+import UserInputForm from './components/UserInputForm';
+import LifeCalendar from './components/LifeCalendar';
+import Navbar from './components/Navbar';
+import './styles.css';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="app">
+        <Navbar />
+
+        <Route path="/" exact>
+          <QuoteDisplay />
+          <UserInputForm />
+        </Route>
+
+        <Route path="/life-calendar">
+          <LifeCalendar />
+        </Route>
+      </div>
+    </Router>
   );
-}
+};
 
 export default App;
