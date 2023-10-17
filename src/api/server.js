@@ -1,5 +1,9 @@
 const jsonServer = require('json-server');
 const server = jsonServer.create();
+const data = require('./db.json');  // Correct import of db.json
+const lifeQuotes = data.lifeQuotes;
+const userInfo = data.userInfo;
+
 const router = jsonServer.router({
   lifeQuotes,
   userInfo
