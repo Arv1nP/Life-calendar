@@ -6,16 +6,20 @@ export default function UserInputForm(){
         lastName: "",
         DOB: "",
         lifeLengthGuess: ""
-    })
+    });
     function handleUserInput(e){
         setUserInput({...userInput, [e.target.name]: e.target.value});        
-    }
+    };
+    function handleSubmit(e){
+        e.preventDefault();
+        console.log(userInput)
+    };
 
 
     return(
         <section className="user-input-form">
           <h2>Your info</h2>
-          <form>
+          <form  onSubmit={handleSubmit}>
             <label>Your first name
                 <input type="text" name="firstName" value={userInput.firstName} onChange={handleUserInput}/>
             </label>
