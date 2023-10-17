@@ -7,21 +7,26 @@ export default function UserInputForm(){
         DOB: "",
         lifeLengthGuess: ""
     })
+    function handleUserInput(e){
+        setUserInput({...userInput, [e.target.name]: e.target.value});        
+    }
+
+
     return(
         <section className="user-input-form">
           <h2>Your info</h2>
           <form>
             <label>Your first name
-                <input type="text" name="firstName" value={userInput.firstName} onChange={}/>
+                <input type="text" name="firstName" value={userInput.firstName} onChange={handleUserInput}/>
             </label>
             <label>Your last name
-                <input type="text" name="lastName" value={userInput.lastName} onChange={}/>
+                <input type="text" name="lastName" value={userInput.lastName} onChange={handleUserInput}/>
             </label>
             <label>Your date of birth
-                <input type="text" name="DOB" value={userInput.DOB} onChange={}/>
+                <input type="text" name="DOB" value={userInput.DOB} onChange={handleUserInput}/>
             </label>
             <label>How long you think you would live
-                <input type="text" name="flifeLengthGuess" value={userInput.lifeLengthGuess} onChange={}/>
+                <input type="text" name="flifeLengthGuess" value={userInput.lifeLengthGuess} onChange={handleUserInput}/>
             </label>
           </form>
         </section>
