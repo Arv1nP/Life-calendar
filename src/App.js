@@ -11,6 +11,10 @@ const App = () => {
   return (
     <div className="app">
       <Navbar/>
+      <QuoteDisplay/>
+      <UserInputForm/>
+      <LifeCalendar/>
+      <About/>
       <Router>
         <Route path="/" exact Component={QuoteDisplay}/>
         <Route path='/user-info' Component={UserInputForm}/>
