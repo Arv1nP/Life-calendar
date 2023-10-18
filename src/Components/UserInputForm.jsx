@@ -1,18 +1,16 @@
 import React, { useState } from "react";
 
-export default function UserInputForm() {
-  const [userInput, setUserInput] = useState({
-    firstName: "",
-    lastName: "",
-    day: "",
-    month: "",
-    year: "",
-    lifeLengthGuess: ""
-  });
+export default function UserInputForm({userInput, setUserInput}) {
+
 
   function handleUserInput(e) {
     const { name, value } = e.target;
-    setUserInput({ ...userInput, [name]: value });
+    const newInput =  { ...userInput, [name]: value }
+    return newInput
+  }
+
+  function handleSubmit(){
+    setUserInput(newInput)
   }
 
 
