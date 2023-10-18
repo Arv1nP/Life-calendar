@@ -15,28 +15,7 @@ export default function UserInputForm() {
     setUserInput({ ...userInput, [name]: value });
   }
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
 
-    try {
-      const response = await fetch('http://localhost:3001/api/userInfo', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(userInput),
-      });
-
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-
-      const data = await response.json();
-      console.log('Success:', data);
-    } catch (error) {
-      console.error('Error:', error);
-    }
-  };
 
   const { firstName, lastName, day, month, year, lifeLengthGuess } = userInput;
 
