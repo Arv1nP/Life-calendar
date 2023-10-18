@@ -15,24 +15,27 @@ export default function UserInputForm() {
     setUserInput({ ...userInput, [name]: value });
   }
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    fetch('http://localhost:3000/api/user-info', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(userInput),
-    })
-      .then(response => response.json())
-      .then(data => {
-        console.log('Success:', data);
-        // Handle success, update state, etc.
-      })
-      .catch((error) => {
-        console.error('Error:', error);
-        // Handle errors
+
+    try {
+      const response = await fetch('http://localhost:3001/api/userInfo', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(userInput),
       });
+
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+
+      const data = await response.json();
+      console.log('Success:', data);
+    } catch (error) {
+      console.error('Error:', error);
+    }
   };
 
   const { firstName, lastName, day, month, year, lifeLengthGuess } = userInput;
@@ -71,7 +74,7 @@ export default function UserInputForm() {
             type="text" placeholder="Years" name="lifeLengthGuess" value={lifeLengthGuess} onChange={handleUserInput}
           />
         </label>
-        <button type="submit">Submit</button>
+        <button type="submit">Save</button>
       </form>
     </section>
   );

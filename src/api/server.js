@@ -1,14 +1,12 @@
 const jsonServer = require('json-server');
 const server = jsonServer.create();
-const data = require('./db.json');  // Correct import of db.json
-const lifeQuotes = data.lifeQuotes;
-const userInfo = data.userInfo;
-
-const router = jsonServer.router({
-  lifeQuotes,
-  userInfo
-});
+const router = jsonServer.router('db.json'); // Use db.json directly
 const middlewares = jsonServer.defaults();
+const low = require('lowdb');
+const FileSync = require('lowdb/adapters/FileSync');
+const adapter = new FileSync('db.json');
+const db = low(adapter);
+
 const port = process.env.PORT || 3001;
 
 server.use(middlewares);
@@ -19,7 +17,17 @@ server.get('/customRoute', (req, res) => {
   res.json({ customData: 'Hello from custom route!' });
 });
 
-server.use('/api', router); // Base URL for API endpoints
+// Modify the POST endpoint to handle ID generation manually
+server.post('/api/userInfo', (req, res) => {
+  const userInfo = req.body;
+  const id = db.get('userInfo').size() + 1; // Manually generate ID
+  userInfo.id = id;
+  db.get('userInfo').push(userInfo).write();
+  res.json(userInfo);
+});
+
+// Use db.json directly as the router
+server.use('/api', router);
 
 server.listen(port, () => {
   console.log(`Server is running on port ${port}`);

@@ -17,7 +17,7 @@ const App = () => {
       <Router>
         <Routes>
           <Route path="/" exact component={QuoteDisplay} />
-          <Route path="/user-info" component={UserInputForm} />
+          <Route path="/userInfo" component={UserInputForm} />
           <Route path="/life-calendar" component={LifeCalendar} />
           <Route path="/about" component={About} />
           </Routes>
