@@ -3,14 +3,14 @@ import React, { useState } from "react";
 export default function UserInputForm({userInput, setUserInput}) {
 
 
-  function handleUserInput(e) {
-    const { name, value } = e.target;
-    const newInput =  { ...userInput, [name]: value }
-    return newInput
-  }
+    const handleUserInput = (e) => {
+        const { name, value } = e.target;
+        const newInput = { ...userInput, [name]: value };
+        setUserInput(newInput);  // Update the state immediately
+      };
+    
 
   function handleSubmit(){
-    setUserInput(newInput)
   }
 
 
