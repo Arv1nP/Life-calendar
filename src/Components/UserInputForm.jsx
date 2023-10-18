@@ -8,7 +8,8 @@ export default function UserInputForm(){
         lifeLengthGuess: ""
     });
     function handleUserInput(e){
-        setUserInput({...userInput, [e.target.name]: e.target.value});        
+        setUserInput({...userInput, [e.target.name]: e.target.value});
+        console.log([e.target.name], e.target.value)        
     };
     function handleSubmit(e){
         e.preventDefault();
@@ -27,10 +28,10 @@ export default function UserInputForm(){
                 <input type="text" name="lastName" value={userInput.lastName} onChange={handleUserInput}/>
             </label>
             <label>Your date of birth
-                <input type="text" name="DOB" value={userInput.DOB} onChange={handleUserInput}/>
+                <input type="text" placeholder="DD/MM/YY" name="DOB" value={userInput.DOB} onChange={handleUserInput}/>
             </label>
             <label>How long you think you would live
-                <input type="text" name="flifeLengthGuess" value={userInput.lifeLengthGuess} onChange={handleUserInput}/>
+                <input type="text" placeholder="Years" name="lifeLengthGuess" value={userInput.lifeLengthGuess} onChange={handleUserInput}/>
             </label>
           </form>
         </section>
