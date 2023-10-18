@@ -50,7 +50,9 @@
     {
       "firstName": "",
       "lastName": "",
-      "DOB": "",
+      "day": "",
+      "month": "",
+      "year": "",
       "lifeLengthGuess": ""
     }
   ]
