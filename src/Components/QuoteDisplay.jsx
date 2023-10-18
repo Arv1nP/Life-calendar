@@ -23,13 +23,13 @@ export default function QuoteDisplay() {
   
 
   return (
-    <div className="quotedisplay">
+    <div className="quoteDisplay">
       {quotes
         .filter(quote => quote.id === randomIndex)
         .map(quote => (
           <div key={quote.id}>
-            <p>{quote.quote}</p>
-            <p>- {quote.author}</p>
+            <p className="quote">"{quote.quote}"</p>
+            <p className="quoteAuthor">- {quote.author}</p>
           </div>
         ))
       }
