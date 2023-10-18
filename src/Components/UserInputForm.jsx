@@ -4,7 +4,7 @@ export default function UserInputForm(){
     const [userInput, setUserInput]= useState({
         firstName: "",
         lastName: "",
-        DOB: "",
+        DOB: {DD,MM,YY},
         lifeLengthGuess: ""
     });
     function handleUserInput(e){
@@ -19,7 +19,7 @@ export default function UserInputForm(){
 
     return(
         <section className="user-input-form">
-          <h2>Your info</h2>
+          <h2>Lets Personalise</h2>
           <form  onSubmit={handleSubmit}>
             <label>Your first name
                 <input type="text" name="firstName" value={userInput.firstName} onChange={handleUserInput}/>
@@ -28,7 +28,9 @@ export default function UserInputForm(){
                 <input type="text" name="lastName" value={userInput.lastName} onChange={handleUserInput}/>
             </label>
             <label>Your date of birth
-                <input type="text" placeholder="DD/MM/YY" name="DOB" value={userInput.DOB} onChange={handleUserInput}/>
+                <input type="text" placeholder="DD" name="DOB" value={userInput.DOB.DD} onChange={handleUserInput}/>
+                <input type="text" placeholder="MM" name="DOB" value={userInput.DOB.MM} onChange={handleUserInput}/>
+                <input type="text" placeholder="YY" name="DOB" value={userInput.DOB.YY} onChange={handleUserInput}/>
             </label>
             <label>How long you think you would live
                 <input type="text" placeholder="Years" name="lifeLengthGuess" value={userInput.lifeLengthGuess} onChange={handleUserInput}/>
