@@ -1,11 +1,10 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import QuoteDisplay from './components/QuoteDisplay';
-import UserInputForm from './components/UserInputForm';
-import LifeCalendar from './components/LifeCalendar';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import QuoteDisplay from './Components/QuoteDisplay';
+import UserInputForm from './Components/UserInputForm';
+import LifeCalendar from './Components/ LifeCalendar';
 import About from './Components/About'
-import Navbar from './components/Navbar';
-import './styles.css';
+import Navbar from './Components/ Navbar';
 
 const App = () => {
   return (
@@ -16,11 +15,13 @@ const App = () => {
       <LifeCalendar/>
       <About/>
       <Router>
-        <Route path="/" exact Component={QuoteDisplay}/>
-        <Route path='/user-info' Component={UserInputForm}/>
-        <Route path='/life-calendar' Component={LifeCalendar}/>
-        <Route path='/about' Component={About}/>
-      </Router>
+        <Routes>
+          <Route path="/" exact component={QuoteDisplay} />
+          <Route path="/user-info" component={UserInputForm} />
+          <Route path="/life-calendar" component={LifeCalendar} />
+          <Route path="/about" component={About} />
+          </Routes>
+    </Router>
     </div>
   );
 };
