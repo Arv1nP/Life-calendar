@@ -1,57 +1,44 @@
 import React, { useState } from "react";
+import "./UserInputForm.css"; // Import the CSS file for styling
 
-export default function UserInputForm({userInput, setUserInput}) {
-
-
-    const handleUserInput = (e) => {
-        const { name, value } = e.target;
-        const newInput = { ...userInput, [name]: value };
-        setUserInput(newInput);  // Update the state immediately
-      };
-    
-
-  function handleSubmit(){
-  }
-
-
+export default function UserInputForm({ userInput, setUserInput }) {
+  const handleUserInput = (e) => {
+    const { name, value } = e.target;
+    const newInput = { ...userInput, [name]: value };
+    setUserInput(newInput);
+  };
 
   const { firstName, lastName, day, month, year, lifeLengthGuess } = userInput;
 
   return (
     <section className="user-input-form">
-      <h2>Lets Personalise</h2>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Your first name
+      <h2 className="form-title">Let's Personalize</h2>
+      <form onSubmit={(e) => e.preventDefault()} className="input-form">
+        <div className="form-group">
+          <label name="firstName" className="input-label">Your first name</label>
           <input
-            type="text" name="firstName" value={firstName} onChange={handleUserInput}
-          />
-        </label>
-        <label>
-          Your last name
+            type="text" id="firstName" className="user-input" name="firstName" value={firstName} onChange={handleUserInput}/>
+        </div>
+        <div className="form-group">
+          <label name="lastName" className="input-label">Your last name</label>
           <input
-            type="text" name="lastName" value={lastName} onChange={handleUserInput}
-          />
-        </label>
-        <label>
-          Your date of birth
+            type="text" id="lastName" className="user-input" name="lastName" value={lastName} onChange={handleUserInput} />
+        </div>
+        <div className="form-group">
+          <label name="dob" className="input-label">Your date of birth</label>
           <input
-            type="text" placeholder="DD" name="day" value={day} onChange={handleUserInput}
-          />
+            type="text" id="day" className="user-input dob-input" placeholder="DD" name="day" value={day} onChange={handleUserInput} />
           <input
-            type="text" placeholder="MM" name="month" value={month} onChange={handleUserInput}
-          />
+            type="text" id="month" className="user-input dob-input" placeholder="MM" name="month" value={month} onChange={handleUserInput} />
           <input
-            type="text" placeholder="YY" name="year" value={year} onChange={handleUserInput}
-          />
-        </label>
-        <label>
-          How long you think you would live
+            type="text" id="year" className="user-input dob-input" placeholder="YY" name="year" value={year} onChange={handleUserInput} />
+        </div>
+        <div className="form-group">
+            <label name="lifeLengthGuess" className="input-label">How long you think you would live</label>
           <input
-            type="text" placeholder="Years" name="lifeLengthGuess" value={lifeLengthGuess} onChange={handleUserInput}
-          />
-        </label>
-        <button type="submit">Save</button>
+            type="text" id="lifeLengthGuess" className="user-input" placeholder="Years" name="lifeLengthGuess" value={lifeLengthGuess} onChange={handleUserInput}/>
+        </div>
+        <button type="submit" className="submit-button">Save</button>
       </form>
     </section>
   );
