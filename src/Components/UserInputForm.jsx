@@ -1,8 +1,7 @@
-import React, { useState } from "react";
-import "./UserInputForm.css"; // Import the CSS file for styling
 
 export default function UserInputForm({ userInput, setUserInput }) {
-  const handleUserInput = (e) => {
+  
+    const handleUserInput = (e) => {
     const { name, value } = e.target;
     const newInput = { ...userInput, [name]: value };
     setUserInput(newInput);

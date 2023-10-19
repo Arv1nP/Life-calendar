@@ -63,3 +63,54 @@
 .quoteAuthor {
   font-weight: bold;
 }
+
+.user-input-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0;
+}
+
+.form-title {
+  font-size: xx-large;
+  margin-bottom: 1rem;
+}
+
+.input-form .form-group {
+  margin-bottom: 1rem;
+}
+
+.input-label {
+  font-size: large;
+  display: inline-flex;
+}
+
+.user-input {
+  width: 100%;
+  padding: 1rem;
+  font-size: medium;
+  background-color: whitesmoke;
+  border: black;
+  border-radius: 5px;
+}
+
+.dob-input {
+  width: 10rem;
+}
+
+.submit-button {
+  padding: 1rem;
+  margin-top: 2rem;
+  font-size: large;
+  background-color: grey;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: darkgrey;
+}
