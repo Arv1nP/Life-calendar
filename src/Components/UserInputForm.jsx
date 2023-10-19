@@ -1,10 +1,28 @@
+import { Link } from "react-router-dom"
 
 export default function UserInputForm({ userInput, setUserInput }) {
   
-    const handleUserInput = (e) => {
+    function handleUserInput(e) {
     const { name, value } = e.target;
     const newInput = { ...userInput, [name]: value };
     setUserInput(newInput);
+  };
+
+  function handleSubmit(e){
+    e.preventDefault()
+    if(firstName === ""){
+        alert("All sections in form must be complete")
+    }else if(lastName === ""){
+        alert("All sections in form must be complete")
+    }else if(day === ""){
+        alert("All sections in form must be complete")
+    }else if(month === ""){
+    alert("All sections in form must be complete")
+    }else if(year === ""){
+    alert("All sections in form must be complete")
+    }else if(lifeLengthGuess === ""){
+    alert("All sections in form must be complete")
+    };
   };
 
   const { firstName, lastName, day, month, year, lifeLengthGuess } = userInput;
@@ -12,7 +30,7 @@ export default function UserInputForm({ userInput, setUserInput }) {
   return (
     <section className="user-input-form">
       <h2 className="form-title">Let's Personalize</h2>
-      <form onSubmit={(e) => e.preventDefault()} className="input-form">
+      <form onSubmit={handleSubmit} className="input-form">
         <div className="form-group">
           <label name="firstName" className="input-label">Your first name</label>
           <input
@@ -39,6 +57,7 @@ export default function UserInputForm({ userInput, setUserInput }) {
         </div>
         <button type="submit" className="submit-button">Save</button>
       </form>
+      <Link className="link" to="/life-calendar">Next ⇒</Link>
     </section>
   );
 }

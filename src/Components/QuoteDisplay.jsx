@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom"
+
 
 export default function QuoteDisplay() {
   const [quotes, setQuotes] = useState([]);
@@ -33,6 +35,7 @@ export default function QuoteDisplay() {
           </div>
         ))
       }
+      <Link className="link" to="/user-Info">Next ⇒</Link>
     </div>
   );
 }

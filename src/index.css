@@ -116,3 +116,14 @@
 .submit-button:hover {
   background-color: darkgrey;
 }
+
+.link {
+  position: fixed;
+  bottom: 8rem; /* Adjust this value as needed */
+  right: 15rem; /* Adjust this value as needed */
+  text-decoration: none; /* Remove underline */
+  color: black;
+  font-size: large;
+  font-style: italic;
+  cursor: pointer;
+}
