@@ -62,6 +62,7 @@
 
 .quoteAuthor {
   font-weight: bold;
+  text-align: center;
 }
 
 .user-input-form {
@@ -98,7 +99,8 @@
 }
 
 .dob-input {
-  width: 10rem;
+  width: 8rem;
+  margin-left: 1rem;
 }
 
 .submit-button {

@@ -4,10 +4,10 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import QuoteDisplay from './Components/QuoteDisplay';
 import UserInputForm from './Components/UserInputForm';
 import LifeCalendar from './Components/ LifeCalendar';
-import About from './Components/About'
+import About from './Components/About';
 import Navbar from './Components/ Navbar';
 
-const App = () => {
+function App(){
   const [userInput, setUserInput] = useState({
     firstName: "",
     lastName: "",
@@ -16,23 +16,21 @@ const App = () => {
     year: "",
     lifeLengthGuess: ""
   });
-    return (
+
+  return (
     <div className="app">
-      <Navbar/>
-      <QuoteDisplay/>
-      <UserInputForm userInput={userInput} setUserInput={setUserInput}/>
-      <LifeCalendar userInput={userInput}/>
-      <About/>
       <Router>
+        <Navbar />
         <Routes>
-          <Route path="/" exact component={QuoteDisplay} />
-          <Route path="/userInfo" component={UserInputForm} />
-          <Route path="/life-calendar" component={LifeCalendar} />
-          <Route path="/about" component={About} />
-          </Routes>
-    </Router>
+          <Route path="/" element={<QuoteDisplay />} />
+          <Route path="/user-info" element={<UserInputForm userInput={userInput} setUserInput={setUserInput} />} />
+          <Route path="/life-calendar" element={<LifeCalendar userInput={userInput} />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
+      </Router>
     </div>
   );
 };
 
 export default App;
+
