@@ -119,15 +119,29 @@
 
 .link {
   position: fixed;
-  bottom: 8rem; /* Adjust this value as needed */
-  right: 15rem; /* Adjust this value as needed */
-  text-decoration: none; /* Remove underline */
+  bottom: 8rem; 
+  right: 15rem; 
+  text-decoration: none; 
   color: black;
   font-size: large;
   font-style: italic;
   cursor: pointer;
+  opacity: 0;
+  transform: scale(0);
+  animation: fadeIn 1s linear forwards;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .hidden {
   display: none;
 }
+
