@@ -1,7 +1,10 @@
+import { useState } from "react";
 import { Link } from "react-router-dom"
 
 export default function UserInputForm({ userInput, setUserInput }) {
   
+    const [save, setSave]= useState(false)
+
     function handleUserInput(e) {
     const { name, value } = e.target;
     const newInput = { ...userInput, [name]: value };
@@ -10,19 +13,9 @@ export default function UserInputForm({ userInput, setUserInput }) {
 
   function handleSubmit(e){
     e.preventDefault()
-    if(firstName === ""){
-        alert("All sections in form must be complete")
-    }else if(lastName === ""){
-        alert("All sections in form must be complete")
-    }else if(day === ""){
-        alert("All sections in form must be complete")
-    }else if(month === ""){
-    alert("All sections in form must be complete")
-    }else if(year === ""){
-    alert("All sections in form must be complete")
-    }else if(lifeLengthGuess === ""){
-    alert("All sections in form must be complete")
-    };
+    if(firstName === "" || lastName === "" || day === "" || month === "" || year === "" || lifeLengthGuess === ""){
+        alert("All sections in form must be complete")}
+    else {setSave(()=>!save)}
   };
 
   const { firstName, lastName, day, month, year, lifeLengthGuess } = userInput;
@@ -55,7 +48,7 @@ export default function UserInputForm({ userInput, setUserInput }) {
           <input
             type="text" id="lifeLengthGuess" className="user-input" placeholder="Years" name="lifeLengthGuess" value={lifeLengthGuess} onChange={handleUserInput}/>
         </div>
-        <button type="submit" className="submit-button">Save</button>
+        <button type="submit" className="submit-button">{!save?"Save":"Submitted"}</button>
       </form>
       <Link className="link" to="/life-calendar">Next ⇒</Link>
     </section>
