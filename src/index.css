@@ -127,3 +127,7 @@
   font-style: italic;
   cursor: pointer;
 }
+
+.hidden {
+  display: none;
+}

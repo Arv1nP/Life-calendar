@@ -50,7 +50,7 @@ export default function UserInputForm({ userInput, setUserInput }) {
         </div>
         <button type="submit" className="submit-button">{!save?"Save":"Submitted"}</button>
       </form>
-      <Link className="link" to="/life-calendar">Next ⇒</Link>
+      <Link className={!save?"hidden":"link"} to="/life-calendar">Next ⇒</Link>
     </section>
   );
 }
