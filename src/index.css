@@ -145,3 +145,19 @@
   display: none;
 }
 
+.lifeGrid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+}
+
+.week {
+  width: 30px;
+  height: 30px;
+  border: 1px black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+}
