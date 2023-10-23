@@ -145,19 +145,33 @@
   display: none;
 }
 
-.lifeGrid {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 50%;
+.life-calendar {
+  text-align: center; /* Center-align the content within each square */
+  max-width: 100%;
+  margin-top: 6rem;
 }
 
-.week {
-  width: 30px;
-  height: 30px;
-  border: 1px black;
+.life-calendar tbody {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 5px;
+  flex-wrap: wrap; /* Wrap rows to the next line when they exceed the container width */
+  justify-content: center; /* Center-align the rows horizontally */
+}
+
+.life-calendar tr {
+  display: flex; /* Use flex display to align squares horizontally within each row */
+  justify-content: center; /* Center-align the squares horizontally within each row */
+  align-items: center; /* Center-align the rows vertically */
+}
+
+.life-calendar .Headers {
+  width: 20px; /* Adjust the width as needed */
+  height: 20px; /* Adjust the height as needed */
+  margin: 2px; /* Adjust the margin as needed */
+}
+
+.life-calendar .week {
+  background-color: #000; /* Background color of the square */
+  width: 5px; /* Adjust the width as needed */
+  height: 5px; /* Adjust the height as needed */
+  margin: 2px; /* Adjust the margin as needed */
 }

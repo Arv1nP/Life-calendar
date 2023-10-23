@@ -44,7 +44,7 @@ export default function UserInputForm({ userInput, setUserInput }) {
             type="text" id="year" className="user-input dob-input" placeholder="YY" name="year" value={year} onChange={handleUserInput} />
         </div>
         <div className="form-group">
-            <label name="lifeLengthGuess" className="input-label">How long you think you would live</label>
+            <label name="lifeLengthGuess" className="input-label" placeholder="In Years">How long you think you would live</label>
           <input
             type="text" id="lifeLengthGuess" className="user-input" placeholder="Years" name="lifeLengthGuess" value={lifeLengthGuess} onChange={handleUserInput}/>
         </div>

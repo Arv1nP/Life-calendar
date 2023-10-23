@@ -1,17 +1,37 @@
-export default function LifeCalendar(userInput){
+import React from 'react';
+
+export default function LifeCalendar({ userInput }) {
   const { firstName, lastName, day, month, year, lifeLengthGuess } = userInput;
-  const totalWeeks = [lifeLengthGuess * 56];
-  
+  const yearsInput = parseInt(lifeLengthGuess);
+
+  const headers = [];
+  for (let i = 1; i <= 52; i++) {
+    headers.push("");
+  }
+
+  const weeks = new Array(yearsInput).fill("");
 
   return (
-    <div className="lifeGrid">
-      <div className="row">
-        {totalWeeks.map((week) => (
-          <div key={week} className="week">
-            {week}
-          </div>
+    <table className="life-calendar">
+      
+      <tbody>
+        <tr>
+          {headers.map((header) => 
+            <th key={header} className="Headers">
+              {header}
+            </th>
+          )}
+        </tr>
+        {weeks.map((week, index) => (
+          <tr key={index}>
+            {headers.map((header, index) => (
+              <td key={index} className="week">
+                {week}
+              </td>
+            ))}
+          </tr>
         ))}
-      </div>
-    </div>
+      </tbody>
+    </table>
   );
-};
+}
