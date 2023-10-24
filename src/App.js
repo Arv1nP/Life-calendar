@@ -6,6 +6,7 @@ import UserInputForm from './Components/UserInputForm';
 import LifeCalendar from './Components/ LifeCalendar';
 import About from './Components/About';
 import Navbar from './Components/ Navbar';
+import SubmitVerification from './Components/SubmitVerification';
 
 function App(){
   const [userInput, setUserInput] = useState({
@@ -21,6 +22,7 @@ function App(){
     <div className="app">
       <Router>
         <Navbar />
+        <SubmitVerification userInput={userInput} />
         <Routes>
           <Route path="/" element={<QuoteDisplay />} />
           <Route path="/user-info" element={<UserInputForm userInput={userInput} setUserInput={setUserInput} />} />
