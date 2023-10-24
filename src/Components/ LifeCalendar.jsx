@@ -13,7 +13,8 @@ export default function LifeCalendar({ userInput }) {
 
   return (
     <table className="life-calendar">
-      
+      <h2 className='weeksHeading'>⬅ 52 Weeks ➡</h2>
+      <h2 className='yearsHeading'>⬅ {lifeLengthGuess} Years ➡</h2>
       <tbody>
         <tr>
           {headers.map((header) => 
