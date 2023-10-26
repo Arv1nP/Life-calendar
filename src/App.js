@@ -25,7 +25,7 @@ function App(){
           <Route path="/" element={<QuoteDisplay />} />
           <Route path="/user-info" element={<UserInputForm userInput={userInput} setUserInput={setUserInput} />} />
           <Route path="/life-calendar" element={<LifeCalendar userInput={userInput} />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/about" element={<About userInput={userInput}/>} />
         </Routes>
       </Router>
     </div>

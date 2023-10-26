@@ -204,3 +204,66 @@
 .weeksHeading {
   margin-block: 0px;
 }
+
+.conclusion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f0f0;
+  padding: 2rem;
+  text-align: center;
+  height: 100vh;
+}
+
+.conclusion p {
+  font-size: 1.7rem;
+    margin: 1rem;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding-block: 7rem;
+}
+
+.ratingSection {
+  display: flow;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  background-color: #f0f0f0;
+}
+
+.ratingSection h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.ratingSection form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ratingSection label {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.ratingSection select {
+  font-size: 1rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 100px;
+  margin-bottom: 1rem;
+}
+
+.ratingSection textarea {
+  font-size: 1rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 100%;
+  margin-bottom: 1rem;
+}

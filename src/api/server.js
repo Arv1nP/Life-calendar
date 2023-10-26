@@ -18,11 +18,11 @@ server.get('/customRoute', (req, res) => {
 });
 
 // Modify the POST endpoint to handle ID generation manually
-server.post('/api/userInfo', (req, res) => {
+server.post('/api/ratings', (req, res) => {
   const userInfo = req.body;
-  const id = db.get('userInfo').size() + 1; // Manually generate ID
+  const id = db.get('ratings').size() + 1; // Manually generate ID
   userInfo.id = id;
-  db.get('userInfo').push(userInfo).write();
+  db.get('ratings').push(userInfo).write();
   res.json(userInfo);
 });
 
