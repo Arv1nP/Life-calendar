@@ -71,6 +71,9 @@ export default function About({userInput}){
             <button type="submit" className="submit-button">{!save?"Submit Rating":"Submitted"}</button>
           </form>
         </section>
+        <footer>
+          <p id="myFooter">Copyright © 2023 Arvin Pourabdollah | All rights reserved</p>
+        </footer>
       </div>
     )
   }
