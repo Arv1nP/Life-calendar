@@ -20,7 +20,7 @@ export default function UserInputForm({ userInput, setUserInput }) {
     const yearsInput = parseInt(lifeLengthGuess)*52;
     if(firstName === "" || lastName === "" || day === "" || month === "" || year === "" || lifeLengthGuess === ""){
         alert("All sections in form must be complete.")}
-    if (weeksLived>yearsInput){
+    else if (weeksLived>yearsInput){
       alert("Your life length guess must be greater than your current age.")
     }
     else {setSave(()=>!save);}
