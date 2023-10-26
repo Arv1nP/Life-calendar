@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { Link } from "react-router-dom"
+import { useEffect } from "react";
 
 export default function UserInputForm({ userInput, setUserInput }) {
   
     const [save, setSave]= useState(false)
-
+    
     function handleUserInput(e) {
     const { name, value } = e.target;
     const newInput = { ...userInput, [name]: value };
@@ -13,10 +14,19 @@ export default function UserInputForm({ userInput, setUserInput }) {
 
   function handleSubmit(e){
     e.preventDefault()
+    const years = (2021-year)*52
+    const months = month*4
+    const days = Math.ceil(day/7)
+    const weeksLived = years+months+days
+    const yearsInput = parseInt(lifeLengthGuess)*52;
     if(firstName === "" || lastName === "" || day === "" || month === "" || year === "" || lifeLengthGuess === ""){
-        alert("All sections in form must be complete")}
-    else {setSave(()=>!save)}
+        alert("All sections in form must be complete.")}
+    if (weeksLived>yearsInput){
+      alert("Your life length guess must be greater than your current age.")
+    }
+    else {setSave(()=>!save);}
   };
+
 
   const { firstName, lastName, day, month, year, lifeLengthGuess } = userInput;
 

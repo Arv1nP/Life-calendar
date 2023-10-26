@@ -46,23 +46,10 @@
       "author": "C.S. Lewis"
     }
   ],
-  "userInfo": [
+  "ratings": [
     {
-      "firstName": "",
-      "lastName": "",
-      "day": "",
-      "month": "",
-      "year": "",
-      "lifeLengthGuess": ""
-    },
-    {
-      "firstName": "Arvin",
-      "lastName": "p",
-      "day": "20",
-      "month": "10",
-      "year": "2001",
-      "lifeLengthGuess": "85",
-      "id": 2
+      "rating": "",
+      "id": "0"
     }
   ]
 }
