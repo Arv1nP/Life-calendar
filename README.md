@@ -30,8 +30,7 @@ Follow these instructions to set up and run the project locally on your machine.
 ### Installation
 
 1. Clone the repository:
-2. Run node server.js in the Terminal
-3. In a new Terminal window Run npm install && npm start
+2. In a new Terminal window Run npm install && npm start
 
    ```bash
    git clone https://arv1np.github.io/Life-calendar/
