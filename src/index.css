@@ -194,10 +194,10 @@
 
 .yearsHeading {
   transform: rotate(-90deg);
-  text-align: center; /* Center-align the text horizontally */
+  text-align: center;
   position: fixed;
   float: left;
-  left: 21vw; /* Add a 1rem gap on the right (negative value) */
+  left: 21vw;
   margin-block-start: 20vw;
 }
 

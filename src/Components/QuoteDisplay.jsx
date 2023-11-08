@@ -10,7 +10,7 @@ export default function QuoteDisplay() {
   useEffect(() => {
     async function fetchQuotes() {
       try {
-        const res = await fetch('http://localhost:3001/api/lifeQuotes');
+        const res = await fetch('https://server-1-ozz2.onrender.com/lifeQuotes');
         const data = await res.json();
         setQuotes(data);
         const index = Math.floor(Math.random() * data.length);
